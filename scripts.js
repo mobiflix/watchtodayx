@@ -1,4 +1,4 @@
-const API_KEY = '5cc26d54c18179b92da8e9c7dac00424';
+const API_KEY = 'lagay';
 const MOVIE_ENDPOINTS = [
   'https://vidlink.pro/movie/',
   'https://vidsrc.dev/embed/movie/',
