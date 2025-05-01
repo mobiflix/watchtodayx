@@ -1,149 +1,217 @@
-<center>
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta name="e6fb624ed3c3ed8bfac08352f7853157789a889b" content="e6fb624ed3c3ed8bfac08352f7853157789a889b" />
-  <meta charset="UTF-8">
-  <meta name="google-site-verification" content="hUpOrZMJQV4YDn3m-7qMFvn5OA8yU5vkZm6ip9VJLpI" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  <title>Stream Movies & TV Series Anytime, Anywhere - WATCH2DAY</title>
-  <meta name="description" content="Enjoy unlimited access to the latest movies and TV shows on Watch2Day. With a simple, fast, and hassle-free streaming experience, you can watch all your favorite films in high-quality without any sign-ups. Start streaming today and never miss out on the best entertainment!">
-  <meta name="keywords" content="alchemy of souls imdb, watch movies tv series online free, where can i watch movies and tv series for free, watch movies and tv series hd online free, watch movies and tv series online free, websites to watch tv series and movies for free, where can i watch movie for free online, watch movies and series for free reddit, soap2day watch movies and series in high quality, watch movies and series online free streaming">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap");
 
-  <link rel="stylesheet" href="styles.css"> 
-  <link rel="preload" href="styles.css" as="styles">
-  <link rel="preload" href="scripts.js" as="scripts">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
-  <link rel="icon" href="favicon-32x32.png" sizes="32x32" type="image/png">
-  <link rel="icon" href="favicon-16x16.png" sizes="16x16" type="image/png">
-</head>
-  
-  <body id="main-body" onload="hideLoader()">
+      :root {
+        --primary-color: #22254b;
+        --secondary-color: #373b69;
+      }
 
-  <body onload="hideLoader()">
+      * {
+        box-sizing: border-box;
+      }
 
-    <!-- Fullscreen Loader -->
-    <div id="loader" class="fullscreen-loader">
-      <div class="spinner"></div>
-      <p>Tell your friends about us!...</p>
-    </div>
-  
-    <div id="main-content" class="content-hidden">
-      <div class="blurred-background"></div>
+      body {
+        background-color: var(--primary-color);
+        font-family: "Poppins", sans-serif;
+        margin: 0;
+      }
 
-<!-- Dark Mode Toggle Switch -->
-<div id="toggle-container">
-  <div class="text-container">
-    <span id="dark-mode-text">DARK MODE</span>
-  </div>
-  <label class="switch">
-    <input type="checkbox" id="dark-mode-toggle">
-    <span class="slider">
-      <!-- Sun Icon from Font Awesome -->
-      <span class="icon-sun fas fa-sun"></span>
-      <!-- Moon Icon from Font Awesome -->
-      <span class="icon-crescent fas fa-moon"></span>
-    </span>
-  </label>
-</div>
-  
-      <!-- Spotlight Section -->
-      <section id="spotlight" class="spotlight">
-        <header class="spotlight-header">
-          <div class="logo">
-            <img src="favicon-32x32.png" alt="Logo" id="logo">
-            <h1 id="site-title">WATCH2DAY</h1>
-        </div>
-        <div class="hamburger-menu" id="hamburger-menu">
-          <i class="fas fa-bars"></i> <!-- Hamburger Icon -->
-        </div>    
-        
-        <div class="navbar-links" id="navbar-links">
-          <a href="index.html"><i class="fas fa-home"></i> Home</a>
-          <a href="movies.html"><i class="fas fa-film"></i> Movies</a>
-          <a href="series.html"><i class="fas fa-tv"></i> TV Shows</a>
-          <a href="animation-tv-shows.html"><i class="fas fa-puzzle-piece"></i> Animation</a>
-          <a href="https://t.me/watch2dayonline" target="_blank"><i class="fab fa-telegram-plane"></i> Telegram</a>
-          <a href="newpage.html"><i class="fas fa-exclamation-circle"></i> Read Me</a> <!-- Added attention link -->
-        </div>
-        
-          <div class="spacer"></div>  
-          <div class="search-container">
-            <input type="text" id="searchBar" placeholder="Search for movies and series..." oninput="searchMovies()">
-            <div id="searchResults"></div>
-            </div>      
-             
-        </header>
+      header {
+        padding: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: var(--secondary-color);
+      }
 
-        <div class="spotlight-content">
-          <h1 id="spotlight-title">Spotlight Title</h1>
-          <div class="spotlight-details">
-            <span id="spotlight-rating" class="spotlight-rating-imdb"><i class="fas fa-star"></i> IMDb: 8.5</span>
-              <span id="spotlight-release-date">Release Date: 2024</span>
-          </div>
-          <p id="spotlight-description">
-              This is the description of the spotlight movie or series. It highlights the most exciting features or storyline.
-          </p>
-          <button id="spotlight-button" onclick="openSpotlight()">Watch Now</button>
-          </div>   
-      </section>
+      header h1 {
+        color: #eee;
+        padding: 0;
+        margin: 0;
+        font-size: 1.5rem;
+      }
 
-      <main>
-<!-- Movies Section -->
-<section id="movies">
-  <h2>Top Rated Movies</h2> <!-- The line will be added via CSS -->
-  <div class="movie-grid" id="movie-grid"></div>
-</section>
+      .search {
+        background-color: transparent;
+        border: 2px solid var(--primary-color);
+        border-radius: 50px;
+        font-family: inherit;
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+        color: #fff;
+      }
 
-        <!-- TV Series Section -->
-        <section id="series">
-          <h2>Top Rated TV Series</h2>
-          <div class="series-grid" id="series-grid"></div>
-        </section>
-      </main>
+      .search::placeholder {
+        color: #7378c5;
+      }
 
-      <!-- Animation TV Shows Section -->
-      <div id="animation-tv-shows">
-        <h2>Animation TV Shows</h2>
-        <div id="animation-tv-shows-grid" class="movie-grid"></div>
-      </div>
+      .search:focus {
+        outline: none;
+        background-color: var(--primary-color);
+      }
 
-      <div id="disclaimer" class="disclaimer">
-          DISCLAIMER! <br>
-          This website's server has no files on it. Only content from third-party websites and services is displayed on this website. We have no control over or endorsement of any of the products, services, or material provided by these websites.
-      </div>
-      
-      <div class="copyright">
-        Copyright © Watch2Day 2024. All Rights Reserved.
-      </div>
+      main {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
 
-      <div id="modal" class="modal">
-        <div class="modal-content">
-          <span class="close" id="close-modal">&times;</span>
-          <div id="modal-player"></div>
-        </div>
-      </div>
+      .movie {
+        width: 300px;
+        margin: 1rem;
+        background-color: var(--secondary-color);
+        box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+        position: relative;
+        overflow: hidden;
+        border-radius: 3px;
+      }
 
-    </div>
+      .movie img {
+        width: 100%;
+      }
 
-    <script src="scripts.js"></script>
+      .movie-info {
+        color: #eee;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.5rem 1rem 1rem;
+        letter-spacing: 0.5px;
+      }
 
+      .movie-info h3 {
+        margin-top: 0;
+      }
+
+      .movie-info span {
+        background-color: var(--primary-color);
+        padding: 0.25rem 0.5rem;
+        border-radius: 3px;
+        font-weight: bold;
+      }
+
+      .movie-info span.green {
+        color: lightgreen;
+      }
+
+      .movie-info span.orange {
+        color: orange;
+      }
+
+      .movie-info span.red {
+        color: red;
+      }
+
+      .overview {
+        background-color: #fff;
+        padding: 2rem;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        max-height: 100%;
+        transform: translateY(101%);
+        overflow-y: auto;
+        transition: transform 0.3s ease-in;
+      }
+
+      .movie:hover .overview {
+        transform: translateY(0);
+      }
+
+      .footer p {
+        color: #eee;
+        text-align: center;
+      }
+
+      @media (max-width: 580px) {
+        header {
+          flex-direction: column;
+        }
+
+        header h1 {
+          padding: 0.5rem 1rem;
+        }
+      }
+    </style>
+    <title>Movie App</title>
+  </head>
+  <body>
+    <header>
+      <h1>Should I watch it?</h1>
+      <form id="form">
+        <input type="text" placeholder="Search" id="search" class="search" />
+      </form>
+    </header>
+    <main id="main"></main>
+    <footer class="footer">
+      <p>
+        This project uses the TMDb API but is not endorsed or certified by TMDb.
+      </p>
+    </footer>
     <script>
-(function(zpfukz){
-var d = document,
-    s = d.createElement('script'),
-    l = d.scripts[d.scripts.length - 1];
-s.settings = zpfukz || {};
-s.src = "\/\/sirovygri.com\/bKX.VZsadJGgl\/0MYpWmdiidYLWv5cu\/Z\/XsI-\/teUm\/9UugZTUilPkRP\/TgYkxzOWD\/YuySNfzFUDtSNHjjER4\/N\/jqI\/3\/Nagl";
-s.async = true;
-s.referrerPolicy = 'no-referrer-when-downgrade';
-l.parentNode.insertBefore(s, l);
-})({})
-</script>
+      const KEY = "3fd2be6f0c70a2a598f084ddfb75487c";
+      // For educational purposes only - DO NOT USE in production
+      // Request your own key for free: https://developers.themoviedb.org/3
+      const API_URL = `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=${KEY}&page=1`;
+      const IMG_PATH = "https://image.tmdb.org/t/p/w1280";
+      const SEARCH_API = `https://api.themoviedb.org/3/search/movie?api_key=${KEY}&query=`;
 
+      const main = document.getElementById("main");
+      const form = document.getElementById("form");
+      const search = document.getElementById("search");
+
+      const getClassByRate = (vote) => {
+        if (vote >= 7.5) return "green";
+        else if (vote >= 7) return "orange";
+        else return "red";
+      };
+
+      const showMovies = (movies) => {
+        main.innerHTML = "";
+        movies.forEach((movie) => {
+          const { title, poster_path, vote_average, overview } = movie;
+          const movieElement = document.createElement("div");
+          movieElement.classList.add("movie");
+          movieElement.innerHTML = `
+    <img
+      src="${IMG_PATH + poster_path}"
+      alt="${title}"
+    />
+    <div class="movie-info">
+      <h3>${title}</h3>
+      <span class="${getClassByRate(vote_average)}">${vote_average}</span>
+    </div>
+    <div class="overview">
+      <h3>Overview</h3>
+      ${overview}
+    </div>
+  `;
+          main.appendChild(movieElement);
+        });
+      };
+
+      const getMovies = async (url) => {
+        const res = await fetch(url);
+        const data = await res.json();
+        showMovies(data.results);
+      };
+
+      getMovies(API_URL);
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const searchTerm = search.value;
+        if (searchTerm && searchTerm !== "") {
+          getMovies(SEARCH_API + searchTerm);
+          search.value = "";
+        } else history.go(0);
+      });
+    </script>
   </body>
 </html>
-</center>
